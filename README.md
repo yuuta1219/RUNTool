@@ -49,3 +49,7 @@ RUNTEQのカリキュラムに並行して、使いこなせる仕組みがあ�
 例えば、zplugを標準でzshにいれておけば、　git add git commit がされているかどうか即座にわかりし、どのブランチにいるかもターミナルで判断できる。
 
 失敗から学ぶこともたくさんあると思うので、一概に紹介できるかというとなんともですが。。。（ 例えば、rubocopの-A　コマンドとか、自分のミスに気づかず修正してしまうなど？）
+
+## 画面遷移図
+
+[figma](https://www.figma.com/file/BJHsHFSJ4wH4hmWfvyertg/RUNTool?node-id=0%3A1&t=LQgiD5skp8FHL8Pq-1)
