@@ -1,0 +1,2 @@
+class CategoryBoardsController < ApplicationController
+end

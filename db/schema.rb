@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_20_070344) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_20_070636) do
   create_table "boards", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "title", null: false
@@ -35,6 +35,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_20_070344) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "category_boards", force: :cascade do |t|
+    t.integer "board_id", null: false
+    t.integer "category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["board_id"], name: "index_category_boards_on_board_id"
+    t.index ["category_id"], name: "index_category_boards_on_category_id"
+  end
+
   create_table "progresses", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
@@ -54,4 +63,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_20_070344) do
   add_foreign_key "boards", "users"
   add_foreign_key "bookmarks", "boards"
   add_foreign_key "bookmarks", "users"
+  add_foreign_key "category_boards", "boards"
+  add_foreign_key "category_boards", "categories"
 end
