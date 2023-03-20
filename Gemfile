@@ -64,3 +64,5 @@ group :development do
   # gem "spring"
 end
 
+gem 'cssbundling-rails'
+gem 'jsbundling-rails'
