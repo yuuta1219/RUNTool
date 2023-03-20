@@ -1,0 +1,2 @@
+class CategoryBoard < ApplicationRecord
+end
