@@ -1,1 +1,26 @@
-<div>アカウント登録ページだよー</div>
+<div class="text-4xl text-gray-600 flex justify-center">新規登録</div>
+<div class="flex justify-center">
+  <%= form_with model: @user, local: true do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="mb-2">
+      <%= f.label :name %>
+      <br/>
+      <%= f.text_field :name, class: "input input-bordered input-primary w-full max-w-s" %>
+    </div>
+    <div class="mb-2">
+      <%= f.label :email %>
+      <br/>
+      <%= f.text_field :email, class: "input input-bordered input-primary w-full max-w-s" %>
+    </div>
+    <div class="mb-2">
+      <%= f.label :password %>
+      <%= f.text_field :password,class: "input input-bordered input-primary w-full max-w-s" %>
+    </div>
+    <div class="mb-2">
+      <%= f.label :password_confirmation %>
+      <%= f.text_field :password_confirmation,class: "input input-bordered input-primary w-full max-w-s" %>
+    </div>
+    <br/>
+    <%= f.submit "サインアップ", class: 'btn btn-primary' %>
+  <% end %>
+</div>

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get 'login', to: 'user_sessions#new'
 
-  resources :users, only: %i[new]
+  get 'users', to: 'users#new'
+  resources :users, only: %i[new create]
   resources :boards, only: %i[index new show edit]
 end
