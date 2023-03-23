@@ -1,4 +1,8 @@
 <div>トップページだよー!</div>
+<% if logged_in? %>
+  <%= button_to "ログアウト", logout_path, method: :delete %>
+<%end%>
+
 <div class="m-10">a</div>
 <button class="btn">Button</button>
 <button class="btn btn-primary">Button</button>
