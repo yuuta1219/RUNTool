@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'policy', to: 'static_pages#policy'
 
   get 'login', to: 'user_sessions#new'
+  post 'login', to: 'user_sessions#create'
+  delete 'logout', to: 'user_sessions#destroy'
 
   get 'users', to: 'users#new'
   resources :users, only: %i[new create]
