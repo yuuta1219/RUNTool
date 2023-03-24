@@ -1,4 +1,5 @@
 class BoardsController < ApplicationController
+  skip_before_action :require_login, only: %i[index show]
   
   def index
     @boards = Board.all
@@ -19,9 +20,29 @@ class BoardsController < ApplicationController
     end
   end
 
-  def show; end 
+  def show
+    @board = Board.find(params[:id])
+  end 
 
-  def edit; end
+  def edit
+    @board = current_user.boards.find(params[:id])
+  end
+
+  def update
+    @board = current_user.boards.find(params[:id])
+    if @board.update(board_params)
+      redirect_to boards_path, success: "記事を編集しました"
+    else
+      flash.now[:alert] = "記事の編集に失敗しました"
+      render :edit
+    end
+  end
+
+  def destroy
+    @board = current_user.boards.find(params[:id])
+    @board.destroy!
+    redirect_to boards_path, success: "記事を削除しました"
+  end
 
   private
 
