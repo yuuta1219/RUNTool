@@ -9,5 +9,5 @@ Rails.application.routes.draw do
 
   get 'users', to: 'users#new'
   resources :users, only: %i[new create]
-  resources :boards, only: %i[index new create show edit]
+  resources :boards, only: %i[index new show edit]
 end
