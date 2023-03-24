@@ -10,11 +10,13 @@
     <%= simple_format(h(@board.body)) %>
   </div>
   <div class="my-10 flex col-span-1">
+    <% if current_user == @board.user %>
     <div>
       <%= link_to "記事を編集",edit_board_path(@board), class: "ml-5 flex-1 btn btn-primary"%>
       <label for="my-modal-<%=@board.id%>", class="ml-2 btn btn-primary">  記事を削除
       </label>
     </div>
+    <% end %>
   </div>
 </div>
 
