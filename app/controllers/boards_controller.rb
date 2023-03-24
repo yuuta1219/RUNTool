@@ -1,11 +1,31 @@
 class BoardsController < ApplicationController
   
- def index; end
+  def index
+    @boards = Board.all
+  end
 
- def new; end
+  def new
+    @board = Board.new
+  end
 
- def show; end 
+  def create
+    @board = current_user.boards.new(board_params)
 
- def edit; end
+    if @board.save
+      redirect_to boards_path, success: "記事を作成しました"
+    else
+      flash.now[:alert] = "記事作成に失敗しました"
+      render :new
+    end
+  end
 
+  def show; end 
+
+  def edit; end
+
+  private
+
+  def board_params
+    params.require(:board).permit(:title, :body)
+  end
 end
