@@ -1,4 +1,13 @@
-<div>フッターだよー</div>
-<%= link_to "利用規約", terms_path %>
-<%= link_to "プライバシーポリシー", policy_path %>
-<%= link_to "お問合せ", "#" %>
+
+<br>
+<footer class="footer items-center p-4 text-gray-500">
+  <div class="items-center grid-flow-col">
+    <p>Copyright © 2023 - All right reserved</p>
+  </div>
+  <div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+    <a><%= link_to "利用規約", terms_path, class:"mr-2" %>
+    </a>
+    <a><%= link_to "プライバシーポリシー", policy_path %></a>
+    <a><%= link_to "お問合せ", "#", class:"mr-4" %></a>
+  </div>
+</footer>
