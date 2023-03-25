@@ -7,6 +7,8 @@ class BoardsController < ApplicationController
 
   def new
     @board = Board.new
+    @categories = Category.all
+    @progresses = Progress.all
   end
 
   def create
@@ -47,6 +49,6 @@ class BoardsController < ApplicationController
   private
 
   def board_params
-    params.require(:board).permit(:title, :body)
+    params.require(:board).permit(:title, :body, :category_id, :Progress_id)
   end
 end
