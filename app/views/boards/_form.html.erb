@@ -9,66 +9,14 @@
       <%= f.label :body, "記事内容", class:" text-lg" %>
       <%= f.text_area :body, rows: 10, class:"textarea textarea-primary textarea-lg w-full " %>
     </div>
-  <!-- カテゴリ部分 start -->
-    <div class="text-lg">カテゴリ</div>
-    <div class="flex flex-row mb-5 w-full">
-      <div class="form-control ml-5">
-        <label class="label cursor-pointer">
-          <input type="radio" name="radio-1" class="radio" checked />
-          <span class="label-text">VScode拡張機能</span> 
-        </label>
-      </div>
-      <div class="form-control">
-        <label class="label cursor-pointer ml-5">
-          <input type="radio" name="radio-1" class="radio" checked />
-          <span class="label-text">chrome拡張機能</span> 
-        </label>
-      </div>
-      <div class="form-control">
-        <label class="label cursor-pointer ml-5">
-          <input type="radio" name="radio-1" class="radio" checked />
-          <span class="label-text">ショートカット</span> 
-        </label>
-      </div>
-      <div class="form-control">
-        <label class="label cursor-pointer ml-5">
-          <input type="radio" name="radio-1" class="radio" checked />
-          <span class="label-text">ターミナル</span> 
-        </label>
-      </div>
+    <div class="form-control mb-5 ">
+      <%= f.label :category_id, "カテゴリ", class:" text-lg" %>
     </div>
-  <!-- カテゴリ部分 end -->
-
-  <!-- 進捗度部分 start -->
-    <div class="text-lg">進捗度</div>
-    <div class="flex flex-row mb-5 w-full ">
-      <div class="form-control ml-5">
-        <label class="label cursor-pointer">
-          <input type="radio" name="radio-2" class="radio" checked />
-          <span class="label-text">入門STEP</span> 
-        </label>
-      </div>
-      <div class="form-control">
-        <label class="label cursor-pointer ml-5">
-          <input type="radio" name="radio-2" class="radio" checked />
-          <span class="label-text">基礎STEP</span> 
-        </label>
-      </div>
-      <div class="form-control">
-        <label class="label cursor-pointer ml-5">
-          <input type="radio" name="radio-2" class="radio" checked />
-          <span class="label-text">応用STEP</span> 
-        </label>
-      </div>
-      <div class="form-control">
-        <label class="label cursor-pointer ml-5">
-          <input type="radio" name="radio-2" class="radio" checked />
-          <span class="label-text">ポートフォリオ</span> 
-        </label>
-      </div>
+      <%= f.collection_radio_buttons :category_id, @categories, :id, :name, { checked: @board.category_id || @categories.first.id, }, { class: "radio" } %>
+    <div class="form-control mb-5 ">
+      <%= f.label :progress_id, "進捗度", class:" text-lg" %>
     </div>
-  <!-- 進捗度部分 end -->
-
+      <%= f.collection_radio_buttons :progress_id, @progresses, :id, :name, { checked: @board.progress_id || @progresses.first.id, }, { class: "radio" } %>
     <div class="flex justify-center mb-5">
       <%= f.submit value: (@board.new_record? ? '作成する' : '更新する'), class: 'btn btn-primary' %>
     </div>

@@ -18,7 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_25_081109) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "category_id"
-    t.integer "progresses_id"
+    t.integer "progress_id"
     t.index ["user_id"], name: "index_boards_on_user_id"
   end
 

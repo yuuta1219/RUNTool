@@ -1,5 +1,6 @@
 class BoardsController < ApplicationController
   skip_before_action :require_login, only: %i[index show]
+  before_action :set_categories_and_progresses, only: [:new, :create, :edit, :update]
   
   def index
     @boards = Board.all
@@ -7,13 +8,10 @@ class BoardsController < ApplicationController
 
   def new
     @board = Board.new
-    @categories = Category.all
-    @progresses = Progress.all
   end
 
   def create
     @board = current_user.boards.new(board_params)
-
     if @board.save
       redirect_to boards_path, success: "記事を作成しました"
     else
@@ -49,6 +47,10 @@ class BoardsController < ApplicationController
   private
 
   def board_params
-    params.require(:board).permit(:title, :body, :category_id, :Progress_id)
+    params.require(:board).permit(:title, :body, :category_id, :progress_id)
+  end
+  def set_categories_and_progresses
+    @categories = Category.all
+    @progresses = Progress.all
   end
 end
