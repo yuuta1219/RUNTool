@@ -73,3 +73,4 @@ end
 gem 'cssbundling-rails'
 gem 'jsbundling-rails'
 gem 'sorcery'
+gem 'ransack'
