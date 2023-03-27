@@ -1,4 +1,8 @@
 <h1 class="text-4xl text-gray-600 flex my-10 ml-20">カテゴリ</h1>
 <div class="grid justify-evenly grid-cols-2 gap-y-36 ">
-  <%= render @boards %>
+  <% if @search_boards %>
+    <%= render partial: "board", collection: @search_boards %>
+  <% else %>
+    <%= render @boards %>
+  <% end %>
 </div>

@@ -24,3 +24,16 @@
     </ul>
   </div>
 </div>
+<div class="navbar bg-base-100">
+  <div class="navbar-start"></div>
+  <div class="navbar-end">
+    <div class="form-control">
+      <div class="input-group pr-8">
+        <%= search_form_for @search do |f| %>
+          <%= f.search_field :body_or_title_cont, placeholder: "掲示板を検索", class:"input input-bordered" %>
+          <%= f.submit value:"検索", class:"btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
