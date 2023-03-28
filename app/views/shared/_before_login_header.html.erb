@@ -13,3 +13,21 @@
     </ul>
   </div>
 </div>
+<div class="navbar bg-base-100">
+  <div class="navbar-start gap-4">
+  <%= link_to "Chrome拡張機能", category_path(1) %>
+  <%= link_to "VScode拡張機能", category_path(2) %>
+  <%= link_to "ショートカット", category_path(3) %>
+  <%= link_to "ターミナル", category_path(4) %>
+  </div>
+  <div class="navbar-end">
+    <div class="form-control">
+      <div class="input-group pr-8">
+        <%= search_form_for @search do |f| %>
+          <%= f.search_field :body_or_title_cont, placeholder: "掲示板を検索", class:"input input-bordered" %>
+          <%= f.submit value:"検索", class:"btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

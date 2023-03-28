@@ -9,6 +9,11 @@ Rails.application.routes.draw do
 
   get 'users', to: 'users#new'
   resources :users, only: %i[new create]
-  resources :boards
+  resources :boards do
+    collection do
+      get :bookmarks
+    end
+  end
+  resources :categories
   resources :bookmarks, only: %i[create destroy]
 end

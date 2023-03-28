@@ -16,7 +16,7 @@
           <svg  xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
         </a>
         <ul class="pr-4 bg-base-100">
-          <li><%= link_to "ブックマーク", "#" %></li>
+          <li><%= link_to "ブックマーク", bookmarks_boards_path %></li>
           <li><%= button_to "ログアウト", logout_path, method: :delete %></li>
         </ul>
       </li>
@@ -24,7 +24,12 @@
   </div>
 </div>
 <div class="navbar bg-base-100">
-  <div class="navbar-start"></div>
+  <div class="navbar-start gap-4">
+  <%= link_to "Chrome拡張機能", category_path(1) %>
+  <%= link_to "VScode拡張機能", category_path(2) %>
+  <%= link_to "ショートカット", category_path(3) %>
+  <%= link_to "ターミナル", category_path(4) %>
+  </div>
   <div class="navbar-end">
     <div class="form-control">
       <div class="input-group pr-8">
