@@ -1,4 +1,4 @@
-<turbo-frame id="bookmark-button">
+<turbo-frame id="bookmark-button-<%= board.id %>">
   <%= button_to bookmarks_path(board_id: board.id),
  id: "js-bookmark-button-for-board-#{board.id}",
  method: :post,
