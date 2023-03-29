@@ -1,59 +1,24 @@
-# コンセプトとして
+# README
 
-## 必ず 1 回は、つかってもらえるようなアプリ
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-## 継続利用を目的としたアプリ
+Things you may want to cover:
 
-いかに、継続利用をしてもらうようにする工夫を出せるか難しい。
+* Ruby version
 
-よく PF で、ターゲットを絞って、ユニークなアプリへという感じ。悪くはないが、ユーザー伸び数が難しいか？（もちろん宣伝次第というところもあるが。。。）
+* System dependencies
 
-# 案 1 　未経験エンジニア向けの補助ツール紹介アプリ
+* Configuration
 
-## 概要
+* Database creation
 
-未経験エンジニア向けへ、パソコンをよりはやく使いこなしたい方へ
+* Database initialization
 
-便利なツールをトータルコーディネートするようなサービス
+* How to run the test suite
 
-## ターゲット
+* Services (job queues, cache servers, search engines, etc.)
 
-RUNTEQ 入学者　メインターゲット
+* Deployment instructions
 
-未経験エンジニア　サブターゲット
-
-## ユーザーが抱える課題
-
-未経験者のパソコンスキルは、千差万別
-
-基本マウス操作の方。ショートカットコマンド　マークダウン記法等
-
-chrome の拡張機能を使えていない
-
-vscode の拡張機能を使えていない。
-
-プラグインを使っていない。（peco zplug)
-
-もちろん、検索したらヒットするものばかりで、自分のカスタマイズ次第というものはある。
-
-これって、意外とレベルがバラバラで、共有しながら問題を解決するときに、誰かに指摘されがち。
-
-カリキュラムをすすめる中で、ここらへんの勉強はしないし、フルコミ以外は触れてこないような感じ？
-
-## 解決方法
-
-RUNTEQ のカリキュラムに並行して、使いこなせる仕組みがあると良いかなと思った
-
-入学初期の段階で、同じように導入して使いこなせるとより効率よく PC を使っていける。
-
-例えば、zplug を標準で zsh にいれておけば、　 git add git commit がされているかどうか即座にわかりし、どのブランチにいるかもターミナルで判断できる。
-
-失敗から学ぶこともたくさんあると思うので、一概に紹介できるかというとなんともですが。。。（ 例えば、rubocop の-A 　コマンドとか、自分のミスに気づかず修正してしまうなど？）
-
-## 画面遷移図
-
-[figma](https://www.figma.com/file/BJHsHFSJ4wH4hmWfvyertg/RUNTool?node-id=0%3A1&t=LQgiD5skp8FHL8Pq-1)
-
-## ER 図
-
-[![Image from Gyazo](https://i.gyazo.com/e6e8579cb9d95a49669d403eeeb79d13.png)](https://gyazo.com/e6e8579cb9d95a49669d403eeeb79d13)
+* ...

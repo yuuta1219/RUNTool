@@ -3,14 +3,12 @@
   "private": "true",
   "dependencies": {
     "autoprefixer": "^10.4.14",
-    "daisyui": "^2.51.4",
-    "esbuild": "^0.17.12",
+    "daisyui": "^2.51.5",
     "postcss": "^8.4.21",
-    "tailwindcss": "^3.2.7"
+    "tailwindcss": "^3.3.0"
   },
   "scripts": {
-    "build:css": "tailwindcss build -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css",
-    "build": "esbuild app/javascripts/application.js --bundle --minify --sourcemap --outdir=app/assets/builds"
+    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9"
