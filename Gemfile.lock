@@ -90,9 +90,6 @@ GEM
     htmlbeautifier (1.4.2)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
-    importmap-rails (1.1.5)
-      actionpack (>= 6.0.0)
-      railties (>= 6.0.0)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -229,7 +226,6 @@ DEPENDENCIES
   cssbundling-rails
   debug
   htmlbeautifier
-  importmap-rails
   jbuilder
   jsbundling-rails
   pg
