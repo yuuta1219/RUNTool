@@ -10,16 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_25_081109) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_29_081752) do
   create_table "boards", force: :cascade do |t|
-    t.integer "user_id", null: false
     t.string "title", null: false
     t.text "body", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "category_id"
     t.integer "progress_id"
-    t.index ["user_id"], name: "index_boards_on_user_id"
+    t.integer "user_id", null: false
   end
 
   create_table "bookmarks", force: :cascade do |t|
@@ -53,7 +52,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_25_081109) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  add_foreign_key "boards", "users"
   add_foreign_key "bookmarks", "boards"
   add_foreign_key "bookmarks", "users"
 end

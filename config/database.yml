@@ -22,7 +22,7 @@ test:
 
 production:
   <<: *default
-  database: clft47o4j00249tp5a1k8728h
-  username: clft47o4h00229tp56ubd6tny
+  database: clfteuxh2002h9tp5du1tgz7d
+  username: clfteuxh1002f9tp5huxkgydn
   password: <%= ENV['RUNTOOL_DATABASE_PASSWORD'] %>
   url: <%= ENV['DATABASE_URL'] %>
