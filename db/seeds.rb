@@ -1,0 +1,8 @@
+Category.create!(name: 'Chrome拡張機能')
+Category.create!(name: 'VScode拡張機能')
+Category.create!(name: 'ショートカット')
+Category.create!(name: 'ターミナル')
+Progress.create!(name: '入門STEP')
+Progress.create!(name: '基礎STEP')
+Progress.create!(name: '応用STEP')
+Progress.create!(name: 'ポートフォリオ')

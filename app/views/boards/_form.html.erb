@@ -1,0 +1,24 @@
+<div class="flex justify-center">
+  <%= form_with model: @board, local: true do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="form-control mb-5">
+      <%= f.label :title, "記事タイトル", class:" text-lg " %>
+      <%= f.text_field :title, class: "input input-bordered input-primary input-lg w-full " %>
+    </div>
+    <div class="form-control mb-5 ">
+      <%= f.label :body, "記事内容", class:" text-lg" %>
+      <%= f.text_area :body, rows: 10, class:"textarea textarea-primary textarea-lg w-full " %>
+    </div>
+    <div class="form-control mb-5 ">
+      <%= f.label :category_id, "カテゴリ", class:" text-lg" %>
+    </div>
+      <%= f.collection_radio_buttons :category_id, @categories, :id, :name, { checked: @board.category_id || @categories.first.id, }, { class: "radio" } %>
+    <div class="form-control mb-5 ">
+      <%= f.label :progress_id, "進捗度", class:" text-lg" %>
+    </div>
+      <%= f.collection_radio_buttons :progress_id, @progresses, :id, :name, { checked: @board.progress_id || @progresses.first.id, }, { class: "radio" } %>
+    <div class="flex justify-center mb-5">
+      <%= f.submit value: (@board.new_record? ? '作成する' : '更新する'), class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>

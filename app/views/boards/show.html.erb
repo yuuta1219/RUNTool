@@ -1,0 +1,31 @@
+<div class="pb-10 flex justify-center grid grid-cols-1">
+  <div class="flex justify-end m-5 text-lg col-span-1">
+    <div class="mx-2 badge badge-lg badge-primary"><%= @board.category.name %></div>
+    <div class="mx-2 badge badge-lg badge-primary"><%= @board.progress.name %></div>
+  </div>
+  <div class="mx-5 font-semibold text-2xl flex justify-center col-span-1">
+    <div class="border-b border-sky-400 min-w-full"><%= @board.title %></div>
+  </div>
+  <div class="m-5 text-lg col-span-1 min-w-full">
+    <%= simple_format(h(@board.body)) %>
+  </div>
+  <div class="my-10 flex col-span-1">
+    <% if current_user == @board.user %>
+    <div>
+      <%= link_to "記事を編集",edit_board_path(@board), class: "ml-5 flex-1 btn btn-primary"%>
+      <label for="my-modal-<%=@board.id%>", class="ml-2 btn btn-primary">  記事を削除
+      </label>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<input type="checkbox" id="my-modal-<%=@board.id%>" class="modal-toggle" />
+<label for="my-modal-<%=@board.id%>" class="modal cursor-pointer">
+  <label class="modal-box relative" for="">
+    <label for="my-modal-<%=@board.id%>" class="btn btn-sm btn-primary btn-circle absolute right-2 top-2">✕</label>
+    <div class="text-xl font-bold m-2 mb-4 border-b border-gray-500">記事「<%= @board.title %>」を削除。</div>
+    <div class="text-sm m-2 my-4">記事を削除しても本当によろしいですか？</br>削除後に元に戻すことはできません。</div>
+    <%= button_to "記事を削除する",board_path(@board),class: 'btn btn-primary m-2 right-0', method: :delete %>  
+  </label>
+</label>

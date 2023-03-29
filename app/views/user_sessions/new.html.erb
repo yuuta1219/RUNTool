@@ -1,0 +1,15 @@
+<div class="text-4xl text-gray-600 flex justify-center">ログイン</div>
+<div class="flex justify-center">
+  <%= form_with url: login_path, local: true do |f| %>
+    <div class="mb-2">
+      <%= f.label :email %>
+      <%= f.text_field :email, class: "input input-bordered input-primary w-full max-w-s" %>
+    </div>
+    <div class="mb-2">
+      <%= f.label :password %>
+      <%= f.text_field :password,class: "input input-bordered input-primary w-full max-w-s" %>
+    </div>
+    <br/>
+    <%= f.submit "ログイン", class: 'btn btn-primary' %>
+  <% end %>
+</div>

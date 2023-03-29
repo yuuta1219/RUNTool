@@ -1,0 +1,7 @@
+<div class="grid justify-evenly grid-cols-2 gap-y-36 ">
+  <% if @search_boards %>
+    <%= render partial: "board", collection: @search_boards %>
+  <% else %>
+    <%= render @boards %>
+  <% end %>
+</div>

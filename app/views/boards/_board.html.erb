@@ -1,0 +1,31 @@
+<%# TODO: CSSを崩さずにリンクの範囲を広げる方法を探る（paddingを利用すると、長いタイトルの時に不自然な折り返しが発生してしまう) %>
+<div class="w-4/5 h-full mx-auto">
+  <%= link_to board_path(board) do %>
+    <div class="flex flex-col h-96 bg-base-300 rounded-lg">
+      <div class="flex justify-between">
+        <div class="pl-2 pt-2"><%= board.category.name %></div>
+        <div class="pr-2 pt-2"><%= board.progress.name %></div>
+      </div>
+      <div class="mx-auto my-auto">
+        <h1 class="text-3xl"><%= board.title %></h1>
+      </div>
+      <div class="flex justify-between place-items-end">
+        <div class="flex flex-col">
+          <div class="text-sm pl-2 pt-2">作成者：<%= board.user.name %></div>
+          <div class="text-sm pl-2 pt-2">作成日時：<%= board.created_at.strftime('%Y/%m/%d') %></div>
+        </div>
+        <div class="text-lg pr-2">
+          <% if current_user %>
+            <%= render 'bookmarks/bookmark_button', board: board %>
+          <% else %>
+            <%# TODO: ログインしていない状態でブックマークボタンをクリックした場合、ログインを促す処理を追加する %>
+            ☆
+            <span id="js-bookmark-count-for-board-<%= board.id %>">
+              <%= board.bookmarks.count %>
+            </span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

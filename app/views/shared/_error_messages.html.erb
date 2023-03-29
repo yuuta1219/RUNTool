@@ -1,0 +1,9 @@
+<% if object.errors.any? %>
+  <div class = "alert bg-red-100">
+    <ul class="list-disc flex flex-col items-start">
+      <% object.errors.full_messages.each do |msg|%>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
