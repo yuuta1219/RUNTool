@@ -7,7 +7,7 @@
     <div class="border-b border-sky-400 min-w-full"><%= @board.title %></div>
   </div>
   <div class="m-5 text-lg col-span-1 min-w-full">
-    <%= simple_format(h(@board.body)) %>
+    <%= simple_format(auto_link(h(@board.body), html: { class: 'text-cyan-600 hover:border-b hover:border-cyan-600' })) %>
   </div>
   <div class="my-10 flex col-span-1">
     <% if current_user == @board.user %>
