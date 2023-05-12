@@ -1,7 +1,7 @@
 <div class="pb-10 flex justify-center grid grid-cols-1">
   <div class="flex justify-end m-5 text-lg col-span-1">
     <div class="mx-2 badge badge-lg badge-primary"><%= @board.category.name %></div>
-    <div class="mx-2 badge badge-lg badge-primary"><%= board.progress&.name || '仮' %></div>
+    <div class="mx-2 badge badge-lg badge-primary"><%= @board.progress&.name || '仮' %></div>
   </div>
   <div class="mx-5 font-semibold text-2xl flex justify-center col-span-1">
     <div class="border-b border-sky-400 min-w-full"><%= @board.title %></div>
