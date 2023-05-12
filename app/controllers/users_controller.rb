@@ -7,9 +7,9 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
     if @user.save
-      redirect_to login_path, notice: "ユーザーを新規登録しました"
+      auto_login(@user)
+      redirect_to root_path, notice: "ユーザーを新規登録しました"
     else
       flash.now[:alert] = "登録に失敗しました"
       # redirect_to new_user_path, alert: "登録に失敗しました"
